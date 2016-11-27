@@ -1,0 +1,34 @@
+%h1 Barcode reader for medicine (ver.0.0.1)
+%noscript Please turn JavaScript on in your browser, it is required for the processing of this page.
+%noscript JavaScript を有効にしてください。
+%p
+  This is barcode reader for medicine. It works offline. Any file or images never upload to server. It scans barcode and decoded number will store at the bottom. You can check the product with submitting the number.
+
+%hr
+#container
+
+= form_tag '/', method: :get do
+  .form-group
+    = text_field_tag :barcode, nil, class: 'form-controll', id: 'barcode'
+  =button_tag 'Go' , class: 'btn btn-success' , type: :submit
+
+%hr
+- if @product
+  #product
+    %table.table.table-bordered
+      %tr
+        %th バーコード
+        %td= @product.barcode
+      %tr
+        %th メーカー
+        %td= @product.maker
+      %tr
+        %th 名前
+        %td= @product.name
+      %tr
+        %th 詳細
+        %td= @product.description
+
+%hr
+%p
+  Copyright &copy; 2016 Yoshinori SUIGYAMA.
