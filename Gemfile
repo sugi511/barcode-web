@@ -34,6 +34,11 @@ gem "haml"
 gem "haml-rails", group: :development
 gem 'bootstrap-sass'
 
+# framework for creating administration style interfaces
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'devise' # if you need
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
